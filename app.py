@@ -57,17 +57,17 @@ class Handler(http.server.BaseHTTPRequestHandler):
         self.add_headers()
         self.wfile.write(b"{\"Hello\": \"World\"}\n")
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     # HOST, PORT = "129.242.219.114", 8081
-    HOST, PORT = "localhost", 8080
-    socketserver.TCPServer.allow_reuse_address = True
-    server = socketserver.TCPServer((HOST, PORT), Handler)
-    # server.socket = ssl.wrap_socket(server.socket, certfile="./cert1.pem", keyfile="./key1.pem", server_side=True)
-    try:
-        print("Serving at: http://{}:{}".format(HOST, PORT))
-        server.serve_forever()
-    except KeyboardInterrupt:
-        pass
-    finally:
-        print("Shutting down")
-        server.shutdown()
+HOST, PORT = "localhost", 8080
+socketserver.TCPServer.allow_reuse_address = True
+server = socketserver.TCPServer((HOST, PORT), Handler)
+# server.socket = ssl.wrap_socket(server.socket, certfile="./cert1.pem", keyfile="./key1.pem", server_side=True)
+try:
+    print("Serving at: http://{}:{}".format(HOST, PORT))
+    server.serve_forever()
+except KeyboardInterrupt:
+    pass
+finally:
+    print("Shutting down")
+    server.shutdown()
