@@ -59,7 +59,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
 
 # if __name__ == "__main__":
     # HOST, PORT = "129.242.219.114", 8081
-HOST, PORT = "localhost", 8080
+HOST, PORT = "0.0.0.0", 8080
 socketserver.TCPServer.allow_reuse_address = True
 server = socketserver.TCPServer((HOST, PORT), Handler)
 # server.socket = ssl.wrap_socket(server.socket, certfile="./cert1.pem", keyfile="./key1.pem", server_side=True)
