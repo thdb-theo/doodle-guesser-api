@@ -16,8 +16,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
         self.send_header("Content-type", "text/json")
         # self.send_header("Access-Control-Allow-Origin", "http://129.242.90.161:5000")
         # self.send_header("Access-Control-Allow-Origin", "https://thdb-theo.github.io")
-        self.send_header("Access-Control-Allow-Origin", "www.doodleguesser.com")
-        # self.send_header("Access-Control-Allow-Origin", "*")
+        # self.send_header("Access-Control-Allow-Origin", "www.doodleguesser.com")
+        self.send_header("Access-Control-Allow-Origin", "*")
 
 
         self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
